@@ -1,3 +1,8 @@
+var indexCurrent = 1;      // Chỉ số hình đầu tiên hiển thị ở slide
+var loop = true;  // Bật lặp slide 
+var showbutton =true;  // Hiện 2 button điều hướng
+var duration = 4000;   // Thời gian chờ chuyển hình (tính theo đơn vị milisecond)
+
 var images = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
 var title = document.getElementById("titleSlider");
 var lstBtn = document.getElementsByClassName("slider")[0].getElementsByTagName("button");
@@ -80,6 +85,6 @@ function getPrevImage(){
     }
     call = false;
 }
-
+initSlider();
 
 
