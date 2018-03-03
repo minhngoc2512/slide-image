@@ -25,27 +25,6 @@
     height: 100%;
 opacity: 0;
 }
-.slider h1{
-    z-index: 999;
-    position: relative !important;
-    background:#333;
-    text-align: center;
-    color:#fff;
-    vertical-align: middle;
-    /*padding:10px;*/
-    position: relative;
-    width: 100%;
-    top:450px;
-    height:50px;
-    line-height: 1.5;
-    opacity: 0.8;
-}
-.slider > ul{
-    list-style-type: none;
-}
-.slider > ul li{
-    float:left;
-}
 .slider .btn{
     cursor: pointer;
     position: relative;
@@ -67,88 +46,4 @@ opacity: 0;
     top:249px;
     right:20px;
    
-}
-
-@media screen and (max-width:992px){
- .slider{
-    max-height: 400px;
- }
- .slider #btnPrev{
-    float:left;
-    top:199px;
-    left:20px;
-}
-.slider #btnNext{
-    float:right;
-    top:199px;
-    right:20px;
-}
-.slider h1{
-    margin:0 auto;
-    background:#333;
-    text-align: center;
-    color:#fff;
-    vertical-align: middle;
-    position: relative;
-    width: 100%;
-    top: 350px;
-    height:50px;
-    line-height: 1.5;
-    opacity: 0.8;
-}
-}
-
-@media screen and (max-width:768px){
- .slider{
-    max-height: 300px;
- }
-  .slider #btnPrev{
-    float:left;
-    top:149px;
-    left:20px;
-}
-.slider #btnNext{
-    float:right;
-    top:149px;
-    right:20px;  
-}
-.slider h1{
-    background:#333;
-    text-align: center;
-    color:#fff;
-    vertical-align: middle;
-    line-height: 1.5;
-    position: relative;
-    width: 100%;
-    top:250px;
-    opacity: 0.8;
-}
-}
-
-@media screen and (max-width:500px){
- .slider{
-    max-height: 200px;
- }
-  .slider #btnPrev{
-    float:left;
-    top:99px;
-    left:20px;
-}
-.slider #btnNext{
-    float:right;
-    top:99px;
-    right:20px;
-}
-.slider h1{
-    background:#333;
-    text-align: center;
-    color:#fff;
-    vertical-align: middle;
-    height:50px;
-    line-height: 1.5;
-    position: relative;
-    width: 100%;
-    top:150px;
-    opacity: 0.8;
-}
 }

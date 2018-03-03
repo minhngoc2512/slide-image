@@ -1,23 +1,15 @@
 var indexCurrent = 1;      // Chỉ số hình đầu tiên hiển thị ở slide
 var loop = true;  // Bật lặp slide 
-var showbutton =true;  // Hiện 2 button điều hướng
 var duration = 4000;   // Thời gian chờ chuyển hình (tính theo đơn vị milisecond)
 
 var images = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
-var title = document.getElementById("titleSlider");
 var lstBtn = document.getElementsByClassName("slider")[0].getElementsByTagName("button");
 var call = true;
+console.log(images);
 function initSlider(){
     images[indexCurrent].style.opacity = 1;
-    title.innerText = images[indexCurrent].getAttribute("title");
-    if(showbutton == false){
-        var lengthButton = lstBtn.length;
-        for(i = 0; i < lengthButton; i++){
-            lstBtn.item(0).remove();
-        }
-    }
     if(loop){
-        setInterval(getNextImage, duration);
+        setInterval(getForwardImage, duration);
     }
 
 }
@@ -36,7 +28,6 @@ function setImage(indexOld)
             
             images[indexCurrent].style.opacity = opacity;
             images[indexOld].style.opacity = opacityImageOld;
-            title.innerText = images[indexCurrent].getAttribute("title");
             if(opacity >= 1 && opacityImageOld <= 0)
             {
                 call = true;
@@ -50,7 +41,7 @@ function setImage(indexOld)
     
 }
 
-function getNextImage(){
+function getForwardImage(status='loop'){
 
     if(call == false){
         return;
@@ -61,30 +52,42 @@ function getNextImage(){
         setImage( images.length - 1);
     }
     else {
-         
-         indexCurrent++;
-         setImage(indexCurrent - 1);
+        if(status==='next'){
+            console.log('next');
+            indexCurrent++;
+            setImage(indexCurrent - 1);
+        }else if(status==='prev'){
+            console.log('prev');
+            indexCurrent--;
+            setImage(indexCurrent + 1);
+        }else{
+            indexCurrent++;
+            setImage(indexCurrent - 1);
+        }
+        
     }
     call = false;
 }
 
-function getPrevImage(){
+// function getNextImage(str='loop'){
+ 
+// }
 
-    if(call == false){
-        return;
-    }
-    if(indexCurrent == 0)
-    {
-        indexCurrent = images.length - 1;
-        setImage( 0);
-    }
-    else {
-         
-         indexCurrent--;
-         setImage(indexCurrent + 1);
-    }
-    call = false;
-}
+// function getPrevImage(){
+//     if(call == false){
+//         return;
+//     }
+//     if(indexCurrent == 0)
+//     {
+//         indexCurrent = images.length - 1;
+//         setImage( 0);
+//     }
+//     else {
+//          indexCurrent--;
+//          setImage(indexCurrent + 1);
+//     }
+//     call = false;
+// }
 initSlider();
 
 
